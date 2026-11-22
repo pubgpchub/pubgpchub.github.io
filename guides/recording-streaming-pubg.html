@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Record and Stream PUBG on PC (OBS Guide) | PUBG PC Guide</title>
+<meta name="description" content="Learn how to record and stream PUBG on PC with OBS Studio, including setup, settings for smooth 1080p video, overlays, and audio tips.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<style>
+:root{--bg:#0e1216;--surface:#171d24;--surface2:#1f2731;--text:#e9edf2;--muted:#9aa7b5;--accent:#f2a900;--accent2:#ffcf3f;--line:#2a3440;--green:#3fbf6f}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
+header.site{background:#0b0e11;border-bottom:2px solid var(--accent);position:sticky;top:0;z-index:50}
+.header-inner{max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{font-size:24px;font-weight:800;letter-spacing:1px;color:#fff}
+.logo span{color:var(--accent)}
+nav.main a{color:#d5dce3;margin-left:22px;font-weight:600;font-size:15px}
+nav.main a:hover{color:var(--accent)}
+main{max-width:820px;margin:0 auto;padding:28px 20px 48px}
+.breadcrumb{font-size:13px;color:var(--muted);margin-bottom:18px}
+.breadcrumb a{color:var(--muted)}
+h1{font-size:32px;line-height:1.25;margin-bottom:10px}
+.meta{color:var(--muted);font-size:14px;margin-bottom:22px}
+.hero-img{width:100%;border-radius:10px;border:1px solid var(--line);margin-bottom:24px}
+.intro{font-size:18px;color:#cfd6de;margin-bottom:24px}
+h2{font-size:23px;margin:30px 0 12px;padding-left:12px;border-left:4px solid var(--accent)}
+h3{font-size:18px;margin:22px 0 8px;color:#fff}
+p{margin-bottom:14px}
+ul,ol{margin:0 0 16px 24px}
+li{margin-bottom:8px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left}
+th{background:var(--surface2);color:#fff}
+.callout{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:14px 18px;margin:20px 0}
+.faq{margin-top:36px}
+.faq h2{border-left:none;padding-left:0}
+.qa{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin-bottom:12px}
+.qa h3{margin:0 0 6px;font-size:16px}
+.qa p{margin:0;color:#cfd6de}
+.related{margin-top:36px;border-top:1px solid var(--line);padding-top:20px}
+.related h2{border-left:none;padding-left:0}
+.related a{display:block;margin-bottom:8px}
+.download-box{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:8px;padding:20px;margin:36px 0 0}
+.download-box h2{border-left:none;padding-left:0;margin:0 0 8px}
+.download-box p{color:#cfd6de;margin-bottom:14px}
+.dl-btns{display:flex;flex-wrap:wrap;gap:10px}
+.dl-btn{display:inline-block;background:var(--accent);color:#111;font-weight:700;padding:10px 18px;border-radius:6px;font-size:15px}
+.dl-btn:hover{text-decoration:none;background:var(--accent2)}
+footer.site{background:#0b0e11;border-top:1px solid var(--line);margin-top:40px}
+.footer-inner{max-width:1100px;margin:0 auto;padding:32px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+footer h4{color:#fff;margin-bottom:10px;font-size:16px}
+footer p,footer a{color:var(--muted);font-size:14px}
+footer a{display:block;margin-bottom:6px}
+.bottom{border-top:1px solid var(--line);padding:14px 20px;text-align:center;color:#7d8a97;font-size:13px}
+@media(max-width:640px){h1{font-size:26px}nav.main a{margin-left:14px;font-size:14px}}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="header-inner">
+    <a class="logo" href="../index.html">PUBG <span>PC</span> Guide</a>
+    <nav class="main">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#guides">Guides</a>
+      <a href="../index.html#tools">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <p class="breadcrumb"><a href="../index.html">Home</a> &raquo; <a href="../index.html#guides">Guides</a> &raquo; Record and Stream PUBG</p>
+  <h1>How to Record and Stream PUBG on PC (OBS Guide)</h1>
+  <p class="meta">PUBG PC Guide &middot; Updated November 2026 &middot; 6 min read</p>
+  <img class="hero-img" src="../images/recording-streaming-pubg.jpg" alt="Recording and streaming PUBG on PC with OBS Studio">
+  <p class="intro">OBS Studio is the free, standard tool for recording and streaming PUBG on PC. This guide walks you through setting it up, choosing settings that keep your game smooth, and making your stream look clean and professional.</p>
+  <h2>Installing OBS and Setting Up Your First Scene</h2>
+  <p>Download OBS Studio from the official OBS website and install it on your PC. When you first open it, the auto-configuration wizard will suggest settings based on your hardware and internet speed. Accept its suggestions for now; you can fine-tune them later. A scene in OBS is a layout that holds your sources, and a source is anything you want to capture, such as the game, your webcam, or your microphone. Create a scene called "PUBG", then add a Game Capture source and set it to capture PUBG specifically. Game Capture is better than Display Capture because it records only the game window, uses fewer resources, and avoids showing your desktop by accident. Add an Audio Input Capture source for your microphone and check that the audio meters move when you speak. Run a short test recording before your first stream.</p>
+  <h2>Best OBS Settings for Recording PUBG</h2>
+  <p>For recording, quality matters more than live bitrate, so you can use higher settings than you would for streaming. Set your base canvas resolution to your monitor resolution, usually 1920x1080, and set the output resolution to the same value for the sharpest result. Use 60 frames per second if your PC can handle it, or 30 frames per second if you want to save performance and disk space. For the encoder, use your graphics card hardware encoder if you have an NVIDIA or AMD GPU, because it records with very little impact on your game performance. Set the recording format to MP4 or MKV; MKV is safer if your PC crashes, because the file is less likely to be lost, and you can remux it to MP4 inside OBS later. Keep your recordings on a fast drive with plenty of free space, since an hour of 1080p 60fps video can use several gigabytes. Test a full match recording first and watch it back to check for stutter, blur, or audio problems.</p>
+  <h2>Best OBS Settings for Streaming PUBG</h2>
+  <p>Streaming adds your internet upload speed to the equation, so you need to balance quality with stability. For most streamers, 1080p at 60 frames per second with a video bitrate of 6000 kilobits per second is a good target on Twitch and YouTube. If your upload speed is limited or your viewers report buffering, drop to 720p at 60 frames per second or 1080p at 30 frames per second. Use the hardware encoder on your graphics card to protect your game frame rate, and set the rate control to CBR for streaming, which keeps the bitrate steady. Connect OBS to your streaming account through the Stream settings, using the built-in account connection rather than pasting a stream key manually when possible. Before you go live, run a private test stream for a few minutes and watch it on another device to check the picture, sound, and delay. A stable stream at a slightly lower quality always looks better than a high-quality stream that keeps freezing.</p>
+  <table>
+    <tr><th>Use Case</th><th>Resolution</th><th>Frame Rate</th><th>Bitrate</th></tr>
+    <tr><td>Recording (high quality)</td><td>1920x1080</td><td>60 fps</td><td>High / CQP 18–22</td></tr>
+    <tr><td>Streaming (fast internet)</td><td>1920x1080</td><td>60 fps</td><td>6000 kbps</td></tr>
+    <tr><td>Streaming (slower internet)</td><td>1280x720</td><td>60 fps</td><td>4500 kbps</td></tr>
+    <tr><td>Low-end PC</td><td>1280x720</td><td>30 fps</td><td>3500 kbps</td></tr>
+  </table>
+  <h2>Audio, Webcam and Overlays</h2>
+  <p>Good audio matters more than fancy graphics. Set your microphone volume so your voice is clear without clipping, and use the OBS audio filters to clean it up: a noise suppressor removes keyboard and fan noise, and a compressor keeps loud shouts and quiet speech at a similar level. Keep game audio slightly lower than your voice so viewers can hear you clearly during fights. If you use a webcam, place it in a corner where it does not cover the minimap, health bar, or kill feed. A simple overlay with your name or a small frame around the webcam is enough; too many graphics distract from the game. Listen to a recording of yourself, because a microphone can sound very different to a viewer than it does in the room.</p>
+  <h2>Keeping Your Game Smooth While Streaming</h2>
+  <p>Recording and streaming both use CPU, GPU, and memory, so your PUBG frame rate will drop if your settings are too ambitious. Start by lowering PUBG's graphics settings slightly, especially shadows, effects, and post-processing, which cost performance without helping gameplay. Close unnecessary apps and browser tabs before you stream, and avoid running a second heavy program at the same time. If your game still stutters, lower the OBS output resolution or frame rate before you lower the game resolution, since a smooth game matters more than a perfect stream. Watch the OBS status bar while you play: green means healthy, yellow means dropped frames, and red means your settings or connection cannot keep up. Keep an eye on your PC temperatures too, and clean dust from your fans if your system runs hot during long sessions. With the right balance, you can stream PUBG for hours without your aim or your viewers suffering.</p>
+  <div class="callout"><p><strong>Before you go live:</strong> Do a five-minute test recording or private stream every time you change a setting. Check the video, the audio, and your game frame rate. It is much better to find a problem in a test than in front of a live audience.</p></div>
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="qa"><h3>Does recording with OBS lower PUBG frame rate?</h3><p>It can, but the impact is small if you use your graphics card hardware encoder and sensible settings. Recording at 1080p 60fps with NVENC or AMD hardware encoding usually costs only a few frames per second on a modern PC.</p></div>
+    <div class="qa"><h3>Why is my OBS stream lagging or buffering?</h3><p>Buffering usually comes from a bitrate that is too high for your upload speed or an unstable connection. Lower the bitrate or resolution, switch to a wired internet connection, and test your upload speed before your next stream.</p></div>
+    <div class="qa"><h3>Can I record PUBG replays without OBS?</h3><p>Yes, PUBG has a built-in replay system that saves your recent matches, and graphics card software such as NVIDIA ShadowPlay or AMD ReLive can also record gameplay. OBS gives you more control over quality, audio, and overlays, which is why most streamers prefer it.</p></div>
+  </section>
+  <div class="download-box">
+    <h2>Download PUBG Now</h2>
+    <p>Get the official game from the official stores. PUBG on PC is free to play on Steam; PUBG Mobile is available on Google Play and the App Store.</p>
+    <div class="dl-btns">
+      <a class="dl-btn" href="https://store.steampowered.com/app/578080" target="_blank" rel="noopener">Download on Steam</a>
+      <a class="dl-btn" href="https://play.google.com/store/apps/details/PUBG_MOBILE?id=com.tencent.ig&hl=en_GB" target="_blank" rel="noopener">Get it on Google Play (Mobile)</a>
+      <a class="dl-btn" href="https://apps.apple.com/pk/app/pubg-mobile/id1330123889" target="_blank" rel="noopener">Download on the App Store (Mobile)</a>
+    </div>
+  </div>
+  <div class="related">
+    <h2>Related Guides</h2>
+    <a href="best-graphics-settings-high-fps.html">Best PUBG Graphics Settings for High FPS on PC</a>
+    <a href="fps-boost-tips.html">FPS Boost Tips for PUBG on PC</a>
+    <a href="best-audio-settings-pc.html">Best Audio Settings for PUBG on PC</a>
+  </div>
+</main>
+<footer class="site">
+  <div class="footer-inner">
+    <div>
+      <h4>PUBG PC Guide</h4>
+      <p>Practical, independent guides for playing PUBG on PC: system requirements, settings, performance and Steam setup.</p>
+    </div>
+    <div>
+      <h4>Guides</h4>
+      <a href="../index.html#guides">All Guides</a>
+      <a href="pubg-pc-system-requirements-2026.html">System Requirements 2026</a>
+      <a href="best-graphics-settings-high-fps.html">Best Graphics Settings</a>
+      <a href="fps-boost-tips.html">FPS Boost Tips</a>
+    </div>
+    <div>
+      <h4>Download</h4>
+      <a href="https://store.steampowered.com/app/578080" target="_blank" rel="noopener">Download on Steam</a>
+      <a href="https://play.google.com/store/apps/details/PUBG_MOBILE?id=com.tencent.ig&hl=en_GB" target="_blank" rel="noopener">Get it on Google Play (Mobile)</a>
+      <a href="https://apps.apple.com/pk/app/pubg-mobile/id1330123889" target="_blank" rel="noopener">Download on the App Store (Mobile)</a>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
+  <div class="bottom">Unofficial fan guide. Not affiliated with or endorsed by KRAFTON, Inc. PUBG is a trademark of KRAFTON, Inc. &copy; 2026 PUBG PC Guide.</div>
+</footer>
+</body>
+</html>
