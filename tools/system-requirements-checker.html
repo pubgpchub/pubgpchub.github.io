@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Requirements Checker | PUBG PC Guide</title>
+<meta name="description" content="Enter your CPU, GPU, RAM and storage to check if your PC can run PUBG, and at which level.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<style>
+:root{--bg:#0e1216;--surface:#171d24;--surface2:#1f2731;--text:#e9edf2;--muted:#9aa7b5;--accent:#f2a900;--accent2:#ffcf3f;--line:#2a3440;--green:#3fbf6f;--red:#e5534b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
+header.site{background:#0b0e11;border-bottom:2px solid var(--accent);position:sticky;top:0;z-index:50}
+.header-inner{max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{font-size:24px;font-weight:800;letter-spacing:1px;color:#fff}
+.logo span{color:var(--accent)}
+nav.main a{color:#d5dce3;margin-left:22px;font-weight:600;font-size:15px}
+nav.main a:hover{color:var(--accent)}
+main{max-width:820px;margin:0 auto;padding:28px 20px 48px}
+.breadcrumb{font-size:13px;color:var(--muted);margin-bottom:18px}
+.breadcrumb a{color:var(--muted)}
+h1{font-size:32px;line-height:1.25;margin-bottom:10px}
+.intro{font-size:17px;color:#cfd6de;margin-bottom:24px}
+.form{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;margin-bottom:24px}
+.field{margin-bottom:16px}
+label{display:block;font-weight:700;margin-bottom:6px}
+select{width:100%;padding:10px 12px;border-radius:6px;border:1px solid var(--line);background:var(--surface2);color:var(--text);font-size:15px}
+button{width:100%;background:var(--accent);color:#111;font-weight:700;font-size:16px;padding:12px;border:none;border-radius:8px;cursor:pointer}
+button:hover{background:var(--accent2)}
+.result{display:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}
+.result h2{font-size:22px;margin-bottom:10px}
+.verdict{font-size:20px;font-weight:800;margin-bottom:6px}
+.verdict.good{color:var(--green)}
+.verdict.warn{color:var(--accent2)}
+.verdict.bad{color:var(--red)}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left}
+th{background:var(--surface2);color:#fff}
+.pass{color:var(--green);font-weight:700}
+.fail{color:var(--red);font-weight:700}
+.note{color:var(--muted);font-size:14px;margin-top:14px}
+footer.site{background:#0b0e11;border-top:1px solid var(--line);margin-top:40px}
+.footer-inner{max-width:1100px;margin:0 auto;padding:32px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+footer h4{color:#fff;margin-bottom:10px;font-size:16px}
+footer p,footer a{color:var(--muted);font-size:14px}
+footer a{display:block;margin-bottom:6px}
+.bottom{border-top:1px solid var(--line);padding:14px 20px;text-align:center;color:#7d8a97;font-size:13px}
+@media(max-width:640px){h1{font-size:26px}nav.main a{margin-left:14px;font-size:14px}}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="header-inner">
+    <a class="logo" href="../index.html">PUBG <span>PC</span> Guide</a>
+    <nav class="main">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#guides">Guides</a>
+      <a href="../index.html#tools">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <p class="breadcrumb"><a href="../index.html">Home</a> &raquo; <a href="../index.html#tools">Tools</a> &raquo; System Requirements Checker</p>
+  <h1>System Requirements Checker</h1>
+  <p class="intro">Enter your PC specs to see if you can run PUBG — and whether you meet the minimum, recommended or ultra level. Compare against the official 2026 requirements.</p>
+  <div class="form">
+    <div class="field">
+      <label for="cpu">Processor (CPU)</label>
+      <select id="cpu">
+        <option value="0">Below Core i5-4430 / Ryzen 3 1200 (older or weaker)</option>
+        <option value="1">Core i5-4430 / Ryzen 3 1200 level (minimum)</option>
+        <option value="2" selected>Core i5-6600K / Ryzen 5 1600 level (recommended)</option>
+        <option value="3">Core i7-9700K / Ryzen 7 3700X level</option>
+        <option value="4">Core i7-12700K / Ryzen 7 5800X level or better</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="gpu">Graphics card (GPU)</label>
+      <select id="gpu">
+        <option value="0">Below GTX 960 / RX 470 (older or weaker)</option>
+        <option value="1">GTX 960 / RX 470 level (minimum)</option>
+        <option value="2" selected>GTX 1060 / RX 580 level (recommended)</option>
+        <option value="3">RTX 3060 / RX 6600 XT level</option>
+        <option value="4">RTX 3070 / RX 6800 level or better</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="ram">Memory (RAM)</label>
+      <select id="ram">
+        <option value="4">4 GB</option>
+        <option value="8">8 GB (minimum)</option>
+        <option value="16" selected>16 GB (recommended)</option>
+        <option value="32">32 GB or more</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="drive">Game installed on</label>
+      <select id="drive">
+        <option value="0">Hard drive (HDD)</option>
+        <option value="1" selected>Solid state drive (SSD)</option>
+      </select>
+    </div>
+    <button type="button" onclick="check()">Can My PC Run PUBG?</button>
+  </div>
+  <div class="result" id="result"></div>
+  <p class="note">Official PUBG minimum: Core i5-4430 / AMD FX-6300, GTX 960 / R7 370, 8 GB RAM, 40 GB storage, 64-bit Windows 10. Recommended: Core i5-6600K / Ryzen 5 1600, GTX 1060 / RX 580, 16 GB RAM, SSD. See the full breakdown in our <a href="../guides/pubg-pc-system-requirements-2026.html">system requirements guide</a>.</p>
+</main>
+<footer class="site">
+  <div class="footer-inner">
+    <div>
+      <h4>PUBG PC Guide</h4>
+      <p>Practical, independent guides for playing PUBG on PC: system requirements, settings, performance and Steam setup.</p>
+    </div>
+    <div>
+      <h4>Guides</h4>
+      <a href="../index.html#guides">All Guides</a>
+      <a href="../guides/pubg-pc-system-requirements-2026.html">System Requirements 2026</a>
+      <a href="../guides/best-graphics-settings-high-fps.html">Best Graphics Settings</a>
+      <a href="../guides/fps-boost-tips.html">FPS Boost Tips</a>
+    </div>
+    <div>
+      <h4>Download</h4>
+      <a href="https://store.steampowered.com/app/578080" target="_blank" rel="noopener">Download on Steam</a>
+      <a href="https://play.google.com/store/apps/details/PUBG_MOBILE?id=com.tencent.ig&hl=en_GB" target="_blank" rel="noopener">Get it on Google Play (Mobile)</a>
+      <a href="https://apps.apple.com/pk/app/pubg-mobile/id1330123889" target="_blank" rel="noopener">Download on the App Store (Mobile)</a>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
+  <div class="bottom">Unofficial fan guide. Not affiliated with or endorsed by KRAFTON, Inc. PUBG is a trademark of KRAFTON, Inc. &copy; 2026 PUBG PC Guide.</div>
+</footer>
+<script>
+function check(){
+  var cpu = parseInt(document.getElementById("cpu").value, 10);
+  var gpu = parseInt(document.getElementById("gpu").value, 10);
+  var ram = parseInt(document.getElementById("ram").value, 10);
+  var drive = parseInt(document.getElementById("drive").value, 10);
+  var cpuName = document.getElementById("cpu").selectedOptions[0].text;
+  var gpuName = document.getElementById("gpu").selectedOptions[0].text;
+  var rows = "";
+  function row(part, ok, detail){
+    rows += "<tr><td>" + part + "</td><td class='" + (ok ? "pass" : "fail") + "'>" + (ok ? "Pass" : "Below minimum") + "</td><td>" + detail + "</td></tr>";
+  }
+  row("Processor", cpu >= 1, cpuName);
+  row("Graphics card", gpu >= 1, gpuName);
+  row("Memory", ram >= 8, ram + " GB RAM");
+  row("Storage", true, drive === 1 ? "SSD — recommended for faster loading" : "HDD — the game will run, but loading is slower");
+  var verdict, cls, advice;
+  if (cpu < 1 || gpu < 1 || ram < 8) {
+    verdict = "Below Minimum — PUBG will not run well";
+    cls = "bad";
+    advice = "At least one part is below the official minimum. Upgrade your graphics card, processor or RAM before playing, or the game may crash or run at unplayable frame rates.";
+  } else if (cpu >= 4 && gpu >= 4 && ram >= 32) {
+    verdict = "Exceeds Recommended — Ultra level";
+    cls = "good";
+    advice = "Your PC is well above the recommended specs. Expect smooth 1440p or 4K gameplay at high settings. Use our FPS optimizer to fine-tune for your monitor's refresh rate.";
+  } else if (cpu >= 2 && gpu >= 2 && ram >= 16) {
+    verdict = "Meets Recommended — Yes, you can run PUBG";
+    cls = "good";
+    advice = "Your PC meets the recommended specs. Expect smooth 1080p gameplay on medium to high settings. An SSD will also cut loading times.";
+  } else {
+    verdict = "Meets Minimum — Yes, but on low settings";
+    cls = "warn";
+    advice = "Your PC meets the minimum specs, so PUBG will run, but use low graphics settings and 1080p resolution. Consider upgrading RAM to 16 GB first — it is the cheapest big improvement.";
+  }
+  var html = "<h2>Result</h2><p class='verdict " + cls + "'>" + verdict + "</p><p>" + advice + "</p>"
+    + "<table><tr><th>Part</th><th>Status</th><th>Your hardware</th></tr>" + rows + "</table>";
+  var r = document.getElementById("result");
+  r.innerHTML = html;
+  r.style.display = "block";
+  r.scrollIntoView({behavior:"smooth"});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weapon Damage Calculator | PUBG PC Guide</title>
+<meta name="description" content="Compare PUBG weapon damage, shots to kill and time to kill against different helmet and vest levels.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<style>
+:root{--bg:#0e1216;--surface:#171d24;--surface2:#1f2731;--text:#e9edf2;--muted:#9aa7b5;--accent:#f2a900;--accent2:#ffcf3f;--line:#2a3440;--green:#3fbf6f}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
+header.site{background:#0b0e11;border-bottom:2px solid var(--accent);position:sticky;top:0;z-index:50}
+.header-inner{max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{font-size:24px;font-weight:800;letter-spacing:1px;color:#fff}
+.logo span{color:var(--accent)}
+nav.main a{color:#d5dce3;margin-left:22px;font-weight:600;font-size:15px}
+nav.main a:hover{color:var(--accent)}
+main{max-width:820px;margin:0 auto;padding:28px 20px 48px}
+.breadcrumb{font-size:13px;color:var(--muted);margin-bottom:18px}
+.breadcrumb a{color:var(--muted)}
+h1{font-size:32px;line-height:1.25;margin-bottom:10px}
+.intro{font-size:17px;color:#cfd6de;margin-bottom:24px}
+.form{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;margin-bottom:24px}
+.field{margin-bottom:16px}
+label{display:block;font-weight:700;margin-bottom:6px}
+select{width:100%;padding:10px 12px;border-radius:6px;border:1px solid var(--line);background:var(--surface2);color:var(--text);font-size:15px}
+button{width:100%;background:var(--accent);color:#111;font-weight:700;font-size:16px;padding:12px;border:none;border-radius:8px;cursor:pointer}
+button:hover{background:var(--accent2)}
+.result{display:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}
+.result h2{font-size:22px;margin-bottom:10px}
+.big{font-size:18px;margin-bottom:8px}
+.big b{color:var(--accent2)}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left}
+th{background:var(--surface2);color:#fff}
+.note{color:var(--muted);font-size:14px;margin-top:14px}
+footer.site{background:#0b0e11;border-top:1px solid var(--line);margin-top:40px}
+.footer-inner{max-width:1100px;margin:0 auto;padding:32px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+footer h4{color:#fff;margin-bottom:10px;font-size:16px}
+footer p,footer a{color:var(--muted);font-size:14px}
+footer a{display:block;margin-bottom:6px}
+.bottom{border-top:1px solid var(--line);padding:14px 20px;text-align:center;color:#7d8a97;font-size:13px}
+@media(max-width:640px){h1{font-size:26px}nav.main a{margin-left:14px;font-size:14px}}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="header-inner">
+    <a class="logo" href="../index.html">PUBG <span>PC</span> Guide</a>
+    <nav class="main">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#guides">Guides</a>
+      <a href="../index.html#tools">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <p class="breadcrumb"><a href="../index.html">Home</a> &raquo; <a href="../index.html#tools">Tools</a> &raquo; Weapon Damage Calculator</p>
+  <h1>Weapon Damage Calculator</h1>
+  <p class="intro">Pick a weapon, your target's armor and the distance. The calculator works out body-shot and headshot damage, shots to kill and time to kill.</p>
+  <div class="form">
+    <div class="field">
+      <label for="weapon">Weapon</label>
+      <select id="weapon"></select>
+    </div>
+    <div class="field">
+      <label for="helmet">Target's helmet</label>
+      <select id="helmet">
+        <option value="0">No helmet</option>
+        <option value="1">Level 1 helmet</option>
+        <option value="2" selected>Level 2 helmet</option>
+        <option value="3">Level 3 helmet</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="vest">Target's vest</label>
+      <select id="vest">
+        <option value="0">No vest</option>
+        <option value="1">Level 1 vest</option>
+        <option value="2" selected>Level 2 vest</option>
+        <option value="3">Level 3 vest</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="distance">Distance</label>
+      <select id="distance">
+        <option value="1" selected>Close (0–100 m)</option>
+        <option value="0.85">Medium (100–300 m)</option>
+        <option value="0.7">Long (300 m+)</option>
+      </select>
+    </div>
+    <button type="button" onclick="calc()">Calculate Damage</button>
+  </div>
+  <div class="result" id="result"></div>
+  <p class="note">Damage values are approximate community-tested figures and may change with game updates. Armor reduces damage: Level 1 blocks 30%, Level 2 blocks 40%, Level 3 blocks 55%. Headshots deal roughly double damage before helmet reduction. Learn how to use each weapon class in our <a href="../guides/best-scopes-pc.html">scopes and optics guide</a>.</p>
+</main>
+<footer class="site">
+  <div class="footer-inner">
+    <div>
+      <h4>PUBG PC Guide</h4>
+      <p>Practical, independent guides for playing PUBG on PC: system requirements, settings, performance and Steam setup.</p>
+    </div>
+    <div>
+      <h4>Guides</h4>
+      <a href="../index.html#guides">All Guides</a>
+      <a href="../guides/pubg-pc-system-requirements-2026.html">System Requirements 2026</a>
+      <a href="../guides/best-graphics-settings-high-fps.html">Best Graphics Settings</a>
+      <a href="../guides/fps-boost-tips.html">FPS Boost Tips</a>
+    </div>
+    <div>
+      <h4>Download</h4>
+      <a href="https://store.steampowered.com/app/578080" target="_blank" rel="noopener">Download on Steam</a>
+      <a href="https://play.google.com/store/apps/details/PUBG_MOBILE?id=com.tencent.ig&hl=en_GB" target="_blank" rel="noopener">Get it on Google Play (Mobile)</a>
+      <a href="https://apps.apple.com/pk/app/pubg-mobile/id1330123889" target="_blank" rel="noopener">Download on the App Store (Mobile)</a>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
+  <div class="bottom">Unofficial fan guide. Not affiliated with or endorsed by KRAFTON, Inc. PUBG is a trademark of KRAFTON, Inc. &copy; 2026 PUBG PC Guide.</div>
+</footer>
+<script>
+var WEAPONS = [
+  {name:"AKM (AR, 7.62mm)", dmg:48, hs:2.0, rpm:600},
+  {name:"Beryl M762 (AR, 7.62mm)", dmg:46, hs:2.0, rpm:700},
+  {name:"M416 (AR, 5.56mm)", dmg:41, hs:2.0, rpm:780},
+  {name:"SCAR-L (AR, 5.56mm)", dmg:41, hs:2.0, rpm:650},
+  {name:"M16A4 (AR, 5.56mm)", dmg:41, hs:2.0, rpm:750},
+  {name:"UMP45 (SMG, .45 ACP)", dmg:39, hs:2.0, rpm:670},
+  {name:"Vector (SMG, 9mm)", dmg:31, hs:2.0, rpm:1100},
+  {name:"SKS (DMR, 7.62mm)", dmg:53, hs:2.0, rpm:300},
+  {name:"Mini 14 (DMR, 5.56mm)", dmg:46, hs:2.0, rpm:360},
+  {name:"Kar98k (Bolt Sniper, 7.62mm)", dmg:79, hs:2.5, rpm:60},
+  {name:"M24 (Bolt Sniper, 7.62mm)", dmg:75, hs:2.5, rpm:60},
+  {name:"AWM (Bolt Sniper, .300)", dmg:105, hs:2.5, rpm:60},
+  {name:"DP-28 (LMG, 7.62mm)", dmg:51, hs:2.0, rpm:500},
+  {name:"M249 (LMG, 5.56mm)", dmg:40, hs:2.0, rpm:800}
+];
+var ARMOR = [0, 0.30, 0.40, 0.55];
+var sel = document.getElementById("weapon");
+WEAPONS.forEach(function(w, i){
+  var o = document.createElement("option");
+  o.value = i; o.textContent = w.name + " — " + w.dmg + " base damage";
+  sel.appendChild(o);
+});
+sel.value = 2;
+function calc(){
+  var w = WEAPONS[parseInt(sel.value, 10)];
+  var helmet = parseInt(document.getElementById("helmet").value, 10);
+  var vest = parseInt(document.getElementById("vest").value, 10);
+  var falloff = parseFloat(document.getElementById("distance").value);
+  var bodyDmg = w.dmg * (1 - ARMOR[vest]) * falloff;
+  var headDmg = w.dmg * w.hs * (1 - ARMOR[helmet]) * falloff;
+  var shotsBody = Math.ceil(100 / bodyDmg);
+  var shotsHead = Math.ceil(100 / headDmg);
+  var ttk = ((shotsBody - 1) * 60 / w.rpm).toFixed(2);
+  var html = "<h2>" + w.name + "</h2>"
+    + "<p class='big'>Body shot damage: <b>" + bodyDmg.toFixed(1) + "</b> &nbsp;|&nbsp; Headshot damage: <b>" + headDmg.toFixed(1) + "</b></p>"
+    + "<p class='big'>Shots to kill (body): <b>" + shotsBody + "</b> &nbsp;|&nbsp; Shots to kill (head): <b>" + shotsHead + "</b></p>"
+    + "<p class='big'>Time to kill (body shots): <b>" + ttk + " seconds</b> at " + w.rpm + " RPM</p>"
+    + "<table><tr><th>Metric</th><th>Value</th></tr>"
+    + "<tr><td>Base damage</td><td>" + w.dmg + "</td></tr>"
+    + "<tr><td>Fire rate</td><td>" + w.rpm + " RPM</td></tr>"
+    + "<tr><td>Body damage after Level " + vest + " vest</td><td>" + bodyDmg.toFixed(1) + "</td></tr>"
+    + "<tr><td>Headshot damage after Level " + helmet + " helmet</td><td>" + headDmg.toFixed(1) + "</td></tr>"
+    + "<tr><td>Shots to kill (100 HP, body)</td><td>" + shotsBody + "</td></tr>"
+    + "<tr><td>Time to kill</td><td>" + ttk + " s</td></tr></table>";
+  var r = document.getElementById("result");
+  r.innerHTML = html;
+  r.style.display = "block";
+  r.scrollIntoView({behavior:"smooth"});
+}
+</script>
+</body>
+</html>

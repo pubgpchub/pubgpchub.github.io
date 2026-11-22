@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keybind Planner | PUBG PC Guide</title>
+<meta name="description" content="View PUBG's default PC keybinds, rebind keys to your liking and export your custom layout.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<style>
+:root{--bg:#0e1216;--surface:#171d24;--surface2:#1f2731;--text:#e9edf2;--muted:#9aa7b5;--accent:#f2a900;--accent2:#ffcf3f;--line:#2a3440;--green:#3fbf6f;--red:#e5534b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
+header.site{background:#0b0e11;border-bottom:2px solid var(--accent);position:sticky;top:0;z-index:50}
+.header-inner{max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{font-size:24px;font-weight:800;letter-spacing:1px;color:#fff}
+.logo span{color:var(--accent)}
+nav.main a{color:#d5dce3;margin-left:22px;font-weight:600;font-size:15px}
+nav.main a:hover{color:var(--accent)}
+main{max-width:820px;margin:0 auto;padding:28px 20px 48px}
+.breadcrumb{font-size:13px;color:var(--muted);margin-bottom:18px}
+.breadcrumb a{color:var(--muted)}
+h1{font-size:32px;line-height:1.25;margin-bottom:10px}
+.intro{font-size:17px;color:#cfd6de;margin-bottom:24px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.actions button{flex:1;min-width:160px;background:var(--accent);color:#111;font-weight:700;font-size:15px;padding:11px;border:none;border-radius:8px;cursor:pointer}
+.actions button.secondary{background:var(--surface2);color:var(--text);border:1px solid var(--line)}
+.actions button:hover{background:var(--accent2)}
+.actions button.secondary:hover{border-color:var(--accent)}
+.status{color:var(--accent2);font-weight:700;min-height:24px;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px;background:var(--surface)}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left}
+th{background:var(--surface2);color:#fff}
+.key{display:inline-block;background:var(--surface2);border:1px solid var(--line);border-radius:5px;padding:2px 10px;font-weight:700;font-family:monospace}
+.rebind{background:var(--surface2);color:var(--text);border:1px solid var(--line);border-radius:6px;padding:5px 12px;cursor:pointer;font-size:13px}
+.rebind:hover{border-color:var(--accent);color:var(--accent2)}
+.listening{color:var(--accent2);font-weight:700}
+.conflict{color:var(--red);font-weight:700}
+pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;white-space:pre-wrap;font-size:14px;margin-top:16px;display:none}
+.note{color:var(--muted);font-size:14px;margin-top:14px}
+footer.site{background:#0b0e11;border-top:1px solid var(--line);margin-top:40px}
+.footer-inner{max-width:1100px;margin:0 auto;padding:32px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+footer h4{color:#fff;margin-bottom:10px;font-size:16px}
+footer p,footer a{color:var(--muted);font-size:14px}
+footer a{display:block;margin-bottom:6px}
+.bottom{border-top:1px solid var(--line);padding:14px 20px;text-align:center;color:#7d8a97;font-size:13px}
+@media(max-width:640px){h1{font-size:26px}nav.main a{margin-left:14px;font-size:14px}}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="header-inner">
+    <a class="logo" href="../index.html">PUBG <span>PC</span> Guide</a>
+    <nav class="main">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#guides">Guides</a>
+      <a href="../index.html#tools">Tools</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <p class="breadcrumb"><a href="../index.html">Home</a> &raquo; <a href="../index.html#tools">Tools</a> &raquo; Keybind Planner</p>
+  <h1>Keybind Planner</h1>
+  <p class="intro">PUBG's default PC keybinds, ready to customize. Click "Rebind" next to any action, then press the new key. Conflicts are flagged automatically. Export your layout to copy it into your own notes.</p>
+  <div class="actions">
+    <button type="button" onclick="resetBinds()">Reset to Defaults</button>
+    <button type="button" class="secondary" onclick="exportBinds()">Copy My Layout</button>
+  </div>
+  <p class="status" id="status"></p>
+  <table>
+    <thead><tr><th>Action</th><th>Key</th><th></th></tr></thead>
+    <tbody id="binds"></tbody>
+  </table>
+  <pre id="export"></pre>
+  <p class="note">Mouse buttons cannot be captured here — set those in-game under Settings &gt; Controls. For a full explanation of each bind and popular pro layouts, read our <a href="../guides/best-keyboard-settings-keybinds.html">keyboard settings and keybinds guide</a>.</p>
+</main>
+<footer class="site">
+  <div class="footer-inner">
+    <div>
+      <h4>PUBG PC Guide</h4>
+      <p>Practical, independent guides for playing PUBG on PC: system requirements, settings, performance and Steam setup.</p>
+    </div>
+    <div>
+      <h4>Guides</h4>
+      <a href="../index.html#guides">All Guides</a>
+      <a href="../guides/pubg-pc-system-requirements-2026.html">System Requirements 2026</a>
+      <a href="../guides/best-graphics-settings-high-fps.html">Best Graphics Settings</a>
+      <a href="../guides/fps-boost-tips.html">FPS Boost Tips</a>
+    </div>
+    <div>
+      <h4>Download</h4>
+      <a href="https://store.steampowered.com/app/578080" target="_blank" rel="noopener">Download on Steam</a>
+      <a href="https://play.google.com/store/apps/details/PUBG_MOBILE?id=com.tencent.ig&hl=en_GB" target="_blank" rel="noopener">Get it on Google Play (Mobile)</a>
+      <a href="https://apps.apple.com/pk/app/pubg-mobile/id1330123889" target="_blank" rel="noopener">Download on the App Store (Mobile)</a>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
+  <div class="bottom">Unofficial fan guide. Not affiliated with or endorsed by KRAFTON, Inc. PUBG is a trademark of KRAFTON, Inc. &copy; 2026 PUBG PC Guide.</div>
+</footer>
+<script>
+var DEFAULTS = [
+  ["Move Forward","W"],["Move Backward","S"],["Move Left","A"],["Move Right","D"],
+  ["Sprint","Shift"],["Jump / Vault","Space"],["Crouch","C"],["Prone","Z"],
+  ["Walk","Alt"],["Reload","R"],["Interact","F"],["Switch to Primary 1","1"],
+  ["Switch to Primary 2","2"],["Switch to Sidearm","3"],["Use Bandage","7"],["Use First Aid Kit","8"],
+  ["Use Med Kit","9"],["Use Energy Drink","0"],["Open Map","M"],["Open Inventory","Tab"],
+  ["Toggle Voice Chat","T"],["Push to Talk","CapsLock"]
+];
+var binds = DEFAULTS.map(function(b){ return {action:b[0], key:b[1]}; });
+var listeningIndex = -1;
+function keyLabel(k){
+  if (k === " ") return "Space";
+  if (k === "Shift") return "Shift";
+  if (k === "Control") return "Ctrl";
+  if (k === "Alt") return "Alt";
+  if (k === "CapsLock") return "CapsLock";
+  if (k === "Tab") return "Tab";
+  return k.length === 1 ? k.toUpperCase() : k;
+}
+function render(){
+  var tb = document.getElementById("binds");
+  var html = "";
+  binds.forEach(function(b, i){
+    var conflict = binds.some(function(o, j){ return j !== i && o.key === b.key; });
+    var keyCell = (listeningIndex === i)
+      ? "<span class='listening'>Press a key...</span>"
+      : "<span class='key'>" + keyLabel(b.key) + "</span>" + (conflict ? " <span class='conflict'>conflict</span>" : "");
+    html += "<tr><td>" + b.action + "</td><td>" + keyCell + "</td><td><button type='button' class='rebind' onclick='startRebind(" + i + ")'>Rebind</button></td></tr>";
+  });
+  tb.innerHTML = html;
+}
+function startRebind(i){
+  listeningIndex = i;
+  document.getElementById("status").textContent = "Press a key for \"" + binds[i].action + "\" (Esc to cancel).";
+  render();
+}
+document.addEventListener("keydown", function(e){
+  if (listeningIndex < 0) return;
+  e.preventDefault();
+  if (e.key === "Escape") {
+    listeningIndex = -1;
+    document.getElementById("status").textContent = "Rebind cancelled.";
+    render();
+    return;
+  }
+  var newKey = e.key;
+  var dup = binds.findIndex(function(o, j){ return j !== listeningIndex && o.key === newKey; });
+  binds[listeningIndex].key = newKey;
+  var msg = "Set \"" + binds[listeningIndex].action + "\" to " + keyLabel(newKey) + ".";
+  if (dup >= 0) msg += " Warning: this key is also used by \"" + binds[dup].action + "\" — rebind one of them.";
+  document.getElementById("status").textContent = msg;
+  listeningIndex = -1;
+  render();
+});
+function resetBinds(){
+  binds = DEFAULTS.map(function(b){ return {action:b[0], key:b[1]}; });
+  listeningIndex = -1;
+  document.getElementById("status").textContent = "Keybinds reset to PUBG defaults.";
+  document.getElementById("export").style.display = "none";
+  render();
+}
+function exportBinds(){
+  var text = "My PUBG PC Keybinds\n" + binds.map(function(b){ return b.action + ": " + keyLabel(b.key); }).join("\n");
+  var pre = document.getElementById("export");
+  pre.textContent = text;
+  pre.style.display = "block";
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(function(){
+      document.getElementById("status").textContent = "Layout copied to clipboard.";
+    }, function(){
+      document.getElementById("status").textContent = "Layout shown below — select and copy it manually.";
+    });
+  } else {
+    document.getElementById("status").textContent = "Layout shown below — select and copy it manually.";
+  }
+}
+render();
+</script>
+</body>
+</html>
