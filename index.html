@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PUBG PC Guide — System Requirements, Settings, FPS &amp; Steam Guides</title>
+<meta name="description" content="Independent PUBG PC guides: system requirements, best graphics settings, FPS optimization, Steam install help and free PC tools for smoother gameplay.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+:root{--bg:#0e1216;--surface:#171d24;--surface2:#1f2731;--text:#e9edf2;--muted:#9aa7b5;--accent:#f2a900;--accent2:#ffcf3f;--line:#2a3440}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
+header.site{background:#0b0e11;border-bottom:2px solid var(--accent);position:sticky;top:0;z-index:50}
+.header-inner{max-width:1140px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{font-size:24px;font-weight:800;letter-spacing:1px;color:#fff}
+.logo span{color:var(--accent)}
+nav.main a{color:#d5dce3;margin-left:22px;font-weight:600;font-size:15px}
+nav.main a:hover{color:var(--accent)}
+.hero{background:linear-gradient(135deg,#141a21 0%,#1b2530 55%,#2a2113 100%);border-bottom:1px solid var(--line)}
+.hero-inner{max-width:1140px;margin:0 auto;padding:56px 20px 52px}
+.eyebrow{color:var(--accent);font-weight:700;letter-spacing:2px;font-size:13px;text-transform:uppercase;margin-bottom:12px}
+.hero h1{font-size:44px;line-height:1.15;max-width:640px;margin-bottom:14px}
+.hero p.lead{font-size:18px;color:#cfd6de;max-width:620px;margin-bottom:26px}
+.dl-btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:14px}
+.dl-btn{display:inline-block;background:var(--accent);color:#111;font-weight:700;padding:13px 22px;border-radius:8px;font-size:16px}
+.dl-btn:hover{text-decoration:none;background:var(--accent2)}
+.dl-btn.ghost{background:transparent;color:#fff;border:1px solid #4a5866}
+.dl-btn.ghost:hover{border-color:var(--accent);color:var(--accent2)}
+.dl-note{color:var(--muted);font-size:13px;margin-bottom:28px}
+.stats{display:flex;flex-wrap:wrap;gap:32px}
+.stat b{display:block;font-size:26px;color:#fff}
+.stat span{color:var(--muted);font-size:14px}
+main{max-width:1140px;margin:0 auto;padding:44px 20px 56px}
+.section-head{margin-bottom:24px}
+.section-head h2{font-size:28px}
+.section-head p{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:180px;object-fit:cover;display:block}
+.card-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.card h3{font-size:18px;line-height:1.35;margin-bottom:8px}
+.card h3 a{color:#fff}
+.card p{color:var(--muted);font-size:14px;flex:1;margin-bottom:14px}
+.read{font-weight:700;font-size:14px}
+.tools-section{margin-top:56px}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.tool-card{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:22px}
+.tool-card h3{font-size:18px;margin-bottom:8px}
+.tool-card h3 a{color:#fff}
+.tool-card p{color:var(--muted);font-size:14px;margin-bottom:14px}
+.download-strip{margin-top:56px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:28px}
+.download-strip h2{font-size:24px;margin-bottom:8px}
+.download-strip p{color:var(--muted);margin-bottom:18px}
+footer.site{background:#0b0e11;border-top:1px solid var(--line);margin-top:40px}
+.footer-inner{max-width:1140px;margin:0 auto;padding:32px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+footer h4{color:#fff;margin-bottom:10px;font-size:16px}
+footer p,footer a{color:var(--muted);font-size:14px}
+footer a{display:block;margin-bottom:6px}
+.bottom{border-top:1px solid var(--line);padding:14px 20px;text-align:center;color:#7d8a97;font-size:13px}
+@media(max-width:640px){.hero h1{font-size:30px}nav.main a{margin-left:14px;font-size:14px}.stats{gap:20px}}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="header-inner">
+    <a class="logo" href="index.html">PUBG <span>PC</span> Guide</a>
+    <nav class="main">
+      <a href="index.html">Home</a>
+      <a href="#guides">Guides</a>
+      <a href="#tools">Tools</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Unofficial PC Guide</p>
+    <h1>Play PUBG on PC at Its Best</h1>
+    <p class="lead">System requirements, graphics settings, FPS optimization and Steam guides — everything you need to run PUBG smoothly on your PC.</p>
+    <div class="dl-btns">
+      <a class="dl-btn" href="https://store.steampowered.com/app/578080" target="_blank" rel="noopener">Download on Steam</a>
+      <a class="dl-btn ghost" href="https://play.google.com/store/apps/details/PUBG_MOBILE?id=com.tencent.ig&hl=en_GB" target="_blank" rel="noopener">Get it on Google Play (Mobile)</a>
+      <a class="dl-btn ghost" href="https://apps.apple.com/pk/app/pubg-mobile/id1330123889" target="_blank" rel="noopener">Download on the App Store (Mobile)</a>
+    </div>
+    <p class="dl-note">PUBG on PC is free to play on Steam. The mobile version, PUBG Mobile, is available on Google Play and the App Store.</p>
+    <div class="stats">
+      <div class="stat"><b>20</b><span>In-depth guides</span></div>
+      <div class="stat"><b>4</b><span>Free PC tools</span></div>
+      <div class="stat"><b>2026</b><span>Updated for this year</span></div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="section-head" id="guides">
+    <h2>Latest Guides</h2>
+    <p>Hardware, settings, performance and gameplay — written for PC players.</p>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <a href="guides/pubg-pc-system-requirements-2026.html"><img src="images/pubg-pc-system-requirements-2026.jpg" alt="Gaming PC with glowing components on a desk"></a>
+      <div class="card-body">
+        <span class="tag">Hardware</span>
+        <h3><a href="guides/pubg-pc-system-requirements-2026.html">PUBG PC System Requirements 2026 (Minimum &amp; Recommended)</a></h3>
+        <p>Check the minimum and recommended PC specs for PUBG in 2026, and what each part means for your frame rate.</p>
+        <a class="read" href="guides/pubg-pc-system-requirements-2026.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/best-graphics-settings-high-fps.html"><img src="images/best-graphics-settings-high-fps.jpg" alt="PC game graphics settings menu on a monitor"></a>
+      <div class="card-body">
+        <span class="tag">Settings</span>
+        <h3><a href="guides/best-graphics-settings-high-fps.html">Best PUBG Graphics Settings for High FPS on PC</a></h3>
+        <p>The exact graphics settings pro players use to push frame rates higher without making the game look bad.</p>
+        <a class="read" href="guides/best-graphics-settings-high-fps.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/best-settings-visibility.html"><img src="images/best-settings-visibility.jpg" alt="Bright daylight battlefield in a shooter game"></a>
+      <div class="card-body">
+        <span class="tag">Settings</span>
+        <h3><a href="guides/best-settings-visibility.html">Best PUBG Settings for Visibility: Spot Enemies Faster</a></h3>
+        <p>Tune brightness, render scale and effects so enemies stand out against grass, smoke and long-distance terrain.</p>
+        <a class="read" href="guides/best-settings-visibility.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/download-install-steam.html"><img src="images/download-install-steam.jpg" alt="Game store page on a computer monitor"></a>
+      <div class="card-body">
+        <span class="tag">Steam</span>
+        <h3><a href="guides/download-install-steam.html">How to Download and Install PUBG on Steam (PC)</a></h3>
+        <p>Step-by-step Steam install guide: account setup, download size, first launch and common install errors.</p>
+        <a class="read" href="guides/download-install-steam.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/fps-boost-tips.html"><img src="images/fps-boost-tips.jpg" alt="Gaming monitor showing a high FPS counter"></a>
+      <div class="card-body">
+        <span class="tag">Performance</span>
+        <h3><a href="guides/fps-boost-tips.html">PUBG FPS Boost: 15 Tips to Raise Frame Rates on PC</a></h3>
+        <p>Fifteen proven tweaks, from in-game settings to Windows and driver changes, that lift PUBG frame rates.</p>
+        <a class="read" href="guides/fps-boost-tips.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/best-mouse-settings.html"><img src="images/best-mouse-settings.jpg" alt="Gaming mouse on a mousepad next to a keyboard"></a>
+      <div class="card-body">
+        <span class="tag">Hardware</span>
+        <h3><a href="guides/best-mouse-settings.html">Best Mouse Settings for PUBG on PC: DPI, Sensitivity &amp; Polling Rate</a></h3>
+        <p>Find your ideal DPI and sensitivity, understand polling rate, and set up a mouse that tracks cleanly in firefights.</p>
+        <a class="read" href="guides/best-mouse-settings.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/best-keyboard-settings-keybinds.html"><img src="images/best-keyboard-settings-keybinds.jpg" alt="Mechanical RGB gaming keyboard close-up"></a>
+      <div class="card-body">
+        <span class="tag">Settings</span>
+        <h3><a href="guides/best-keyboard-settings-keybinds.html">Best Keyboard Settings and Keybinds for PUBG on PC</a></h3>
+        <p>A practical keybind layout for movement, looting, healing and driving, plus how to rebind without conflicts.</p>
+        <a class="read" href="guides/best-keyboard-settings-keybinds.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/best-pc-builds-pubg.html"><img src="images/best-pc-builds-pubg.jpg" alt="Custom gaming PC with RGB lighting"></a>
+      <div class="card-body">
+        <span class="tag">Hardware</span>
+        <h3><a href="guides/best-pc-builds-pubg.html">Best PC Builds for PUBG in 2026: Budget, Mid-Range &amp; High-End</a></h3>
+        <p>Three complete part lists for smooth PUBG at 1080p, 1440p and 4K, with prices kept in check.</p>
+        <a class="read" href="guides/best-pc-builds-pubg.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/laptop-vs-desktop-pubg.html"><img src="images/laptop-vs-desktop-pubg.jpg" alt="Gaming laptop and desktop PC side by side"></a>
+      <div class="card-body">
+        <span class="tag">Hardware</span>
+        <h3><a href="guides/laptop-vs-desktop-pubg.html">Laptop vs Desktop for PUBG: Which Is Better for PC Players?</a></h3>
+        <p>Performance, thermals, upgradeability and price compared so you can pick the right machine for PUBG.</p>
+        <a class="read" href="guides/laptop-vs-desktop-pubg.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/fix-lag-stutter.html"><img src="images/fix-lag-stutter.jpg" alt="Gamer at a PC with a stuttering game on screen"></a>
+      <div class="card-body">
+        <span class="tag">Performance</span>
+        <h3><a href="guides/fix-lag-stutter.html">How to Fix Lag and Stutter in PUBG on PC</a></h3>
+        <p>Diagnose the real cause of stutter — CPU, RAM, storage or network — and fix it step by step.</p>
+        <a class="read" href="guides/fix-lag-stutter.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/graphics-card-guide.html"><img src="images/graphics-card-guide.jpg" alt="High-end graphics card above an open PC case"></a>
+      <div class="card-body">
+        <span class="tag">Hardware</span>
+        <h3><a href="guides/graphics-card-guide.html">Best Graphics Cards for PUBG on PC in 2026</a></h3>
+        <p>Which GPUs actually deliver high FPS in PUBG, from budget cards to high-end 1440p and 4K options.</p>
+        <a class="read" href="guides/graphics-card-guide.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/best-monitor-settings.html"><img src="images/best-monitor-settings.jpg" alt="Ultrawide gaming monitor displaying a shooter game"></a>
+      <div class="card-body">
+        <span class="tag">Hardware</span>
+        <h3><a href="guides/best-monitor-settings.html">Best Monitor Settings for PUBG: Refresh Rate, Response Time &amp; Color</a></h3>
+        <p>Set refresh rate, response time and color properly so motion stays sharp and enemies stay visible.</p>
+        <a class="read" href="guides/best-monitor-settings.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/best-audio-settings-pc.html"><img src="images/best-audio-settings-pc.jpg" alt="Gaming headset on a stand next to a PC"></a>
+      <div class="card-body">
+        <span class="tag">Settings</span>
+        <h3><a href="guides/best-audio-settings-pc.html">Best Audio Settings for PUBG on PC: Hear Every Footstep</a></h3>
+        <p>Configure Windows and in-game audio so footsteps, vehicles and gunfire give you clear directional cues.</p>
+        <a class="read" href="guides/best-audio-settings-pc.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/ranked-mode-pc.html"><img src="images/ranked-mode-pc.jpg" alt="Esports trophy on a gaming desk"></a>
+      <div class="card-body">
+        <span class="tag">Gameplay</span>
+        <h3><a href="guides/ranked-mode-pc.html">PUBG Ranked Mode on PC: Ranks, Points &amp; How to Climb</a></h3>
+        <p>How ranked works on PC, how points are earned, and the habits that climb you from Bronze to Master.</p>
+        <a class="read" href="guides/ranked-mode-pc.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/training-mode-drills.html"><img src="images/training-mode-drills.jpg" alt="Shooting range training ground in a video game"></a>
+      <div class="card-body">
+        <span class="tag">Gameplay</span>
+        <h3><a href="guides/training-mode-drills.html">PUBG Training Mode Drills: Aim, Recoil &amp; Movement Practice</a></h3>
+        <p>Structured drills for aim, recoil control and movement that turn training mode time into real match skill.</p>
+        <a class="read" href="guides/training-mode-drills.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/best-scopes-pc.html"><img src="images/best-scopes-pc.jpg" alt="Rifle scope close-up with crosshair view"></a>
+      <div class="card-body">
+        <span class="tag">Gameplay</span>
+        <h3><a href="guides/best-scopes-pc.html">Best Scopes and Optics for PUBG on PC</a></h3>
+        <p>Which optic to run on each weapon class, and how to use red dots, holographics and scopes at every range.</p>
+        <a class="read" href="guides/best-scopes-pc.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/driving-vehicles-pc.html"><img src="images/driving-vehicles-pc.jpg" alt="Off-road vehicle driving across grassland in a game"></a>
+      <div class="card-body">
+        <span class="tag">Gameplay</span>
+        <h3><a href="guides/driving-vehicles-pc.html">Driving Vehicles in PUBG on PC: Controls, Tips &amp; Best Vehicles</a></h3>
+        <p>Vehicle controls, handling tips and the best vehicle for each situation, from rotations to final circles.</p>
+        <a class="read" href="guides/driving-vehicles-pc.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/squad-voice-communication.html"><img src="images/squad-voice-communication.jpg" alt="Four gamers with headsets playing together"></a>
+      <div class="card-body">
+        <span class="tag">Gameplay</span>
+        <h3><a href="guides/squad-voice-communication.html">Squad Voice Communication in PUBG on PC: Setup &amp; Callouts</a></h3>
+        <p>Set up voice chat, use clear callouts, and keep your squad coordinated from drop to final circle.</p>
+        <a class="read" href="guides/squad-voice-communication.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/recording-streaming-pubg.html"><img src="images/recording-streaming-pubg.jpg" alt="Streamer desk with microphone and dual monitors"></a>
+      <div class="card-body">
+        <span class="tag">Streaming</span>
+        <h3><a href="guides/recording-streaming-pubg.html">How to Record and Stream PUBG on PC (OBS Guide)</a></h3>
+        <p>Record clips and stream PUBG with OBS without tanking your FPS, including encoder and bitrate settings.</p>
+        <a class="read" href="guides/recording-streaming-pubg.html">Read guide &raquo;</a>
+      </div>
+    </article>
+    <article class="card">
+      <a href="guides/common-pc-errors-fixes.html"><img src="images/common-pc-errors-fixes.jpg" alt="PC monitor showing an error message"></a>
+      <div class="card-body">
+        <span class="tag">Troubleshooting</span>
+        <h3><a href="guides/common-pc-errors-fixes.html">Common PUBG PC Errors and How to Fix Them</a></h3>
+        <p>Fix the most common PUBG PC errors: crashes, BattlEye issues, launch failures and missing files.</p>
+        <a class="read" href="guides/common-pc-errors-fixes.html">Read guide &raquo;</a>
+      </div>
+    </article>
+  </div>
+
+  <div class="tools-section" id="tools">
+    <div class="section-head">
+      <h2>Free PC Tools</h2>
+      <p>Run them right in your browser — no download needed.</p>
+    </div>
+    <div class="tool-grid">
+      <div class="tool-card">
+        <h3><a href="tools/fps-settings-optimizer.html">FPS Settings Optimizer</a></h3>
+        <p>Pick your GPU and CPU tier and get recommended graphics settings for your target frame rate.</p>
+        <a class="read" href="tools/fps-settings-optimizer.html">Open tool &raquo;</a>
+      </div>
+      <div class="tool-card">
+        <h3><a href="tools/system-requirements-checker.html">System Requirements Checker</a></h3>
+        <p>Enter your CPU, GPU and RAM to see if your PC can run PUBG, and at which level.</p>
+        <a class="read" href="tools/system-requirements-checker.html">Open tool &raquo;</a>
+      </div>
+      <div class="tool-card">
+        <h3><a href="tools/keybind-planner.html">Keybind Planner</a></h3>
+        <p>View the default keybinds, rebind keys to your liking and export your layout.</p>
+        <a class="read" href="tools/keybind-planner.html">Open tool &raquo;</a>
+      </div>
+      <div class="tool-card">
+        <h3><a href="tools/weapon-damage-calculator.html">Weapon Damage Calculator</a></h3>
+        <p>Compare weapon damage, shots to kill and time to kill against different armor levels.</p>
+        <a class="read" href="tools/weapon-damage-calculator.html">Open tool &raquo;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="download-strip">
+    <h2>Download PUBG Now</h2>
+    <p>Get the official game from the official stores. PUBG on PC is free to play on Steam; PUBG Mobile is available on Google Play and the App Store.</p>
+    <div class="dl-btns">
+      <a class="dl-btn" href="https://store.steampowered.com/app/578080" target="_blank" rel="noopener">Download on Steam</a>
+      <a class="dl-btn ghost" href="https://play.google.com/store/apps/details/PUBG_MOBILE?id=com.tencent.ig&hl=en_GB" target="_blank" rel="noopener">Get it on Google Play (Mobile)</a>
+      <a class="dl-btn ghost" href="https://apps.apple.com/pk/app/pubg-mobile/id1330123889" target="_blank" rel="noopener">Download on the App Store (Mobile)</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="footer-inner">
+    <div>
+      <h4>PUBG PC Guide</h4>
+      <p>Practical, independent guides for playing PUBG on PC: system requirements, settings, performance and Steam setup.</p>
+    </div>
+    <div>
+      <h4>Guides</h4>
+      <a href="index.html#guides">All Guides</a>
+      <a href="guides/pubg-pc-system-requirements-2026.html">System Requirements 2026</a>
+      <a href="guides/best-graphics-settings-high-fps.html">Best Graphics Settings</a>
+      <a href="guides/fps-boost-tips.html">FPS Boost Tips</a>
+    </div>
+    <div>
+      <h4>Download</h4>
+      <a href="https://store.steampowered.com/app/578080" target="_blank" rel="noopener">Download on Steam</a>
+      <a href="https://play.google.com/store/apps/details/PUBG_MOBILE?id=com.tencent.ig&hl=en_GB" target="_blank" rel="noopener">Get it on Google Play (Mobile)</a>
+      <a href="https://apps.apple.com/pk/app/pubg-mobile/id1330123889" target="_blank" rel="noopener">Download on the App Store (Mobile)</a>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
+  <div class="bottom">Unofficial fan guide. Not affiliated with or endorsed by KRAFTON, Inc. PUBG is a trademark of KRAFTON, Inc. &copy; 2026 PUBG PC Guide.</div>
+</footer>
+</body>
+</html>
